@@ -1,11 +1,42 @@
 <template>
   <nav>
-      <v-toolbar flat app>
-
-      </v-toolbar>
+    <v-toolbar dense>
+      <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
+      <v-tool-tittle class="text-uppercase grey--text">
+        <span class="font-weight-light">Wladi</span>
+        <span>Mir </span>
+      </v-tool-tittle>
+      <VSpacer />
+      <v-btn flat color="success">
+        <span>Sign Out</span>
+        <v-icon right>exit_to_app</v-icon>
+      </v-btn>
+    </v-toolbar>
+    <v-navigation-drawer app v-model="drawer" class="indigo">
+      <v-list>
+        <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
+          <v-list-item-action>
+            <v-icon left class="white--text">{{ link.icon }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title class="white--text">{{ link.text }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      drawer: false,
+      links: [
+        { icon: "dashboard", text: "Home", route: "/" },
+        { icon: "folder", text: "About", route: "/about" }
+      ],
+    };
+  },
+};
 </script>
