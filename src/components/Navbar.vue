@@ -1,13 +1,13 @@
 <template>
   <nav>
     <v-toolbar dense>
-      <v-app-bar-nav-icon @click="drawer = !drawer"> </v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"> </v-app-bar-nav-icon>
       <v-tool-tittle class="text-uppercase grey--text">
         <span class="font-weight-light">Wladi</span>
         <span>Mir </span>
       </v-tool-tittle>
       <VSpacer />
-      <v-btn flat color="success">
+      <v-btn  color="success">
         <span>Sign Out</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
@@ -34,7 +34,7 @@ export default {
       drawer: false,
       links: [
         { icon: "dashboard", text: "Home", route: "/" },
-        { icon: "folder", text: "About", route: "/about" }
+        { icon: "folder", text: "Login", route: "/login" }
       ],
     };
   },
