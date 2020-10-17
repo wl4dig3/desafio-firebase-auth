@@ -2,10 +2,10 @@
   <nav>
     <v-toolbar dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"> </v-app-bar-nav-icon>
-      <v-tool-tittle class="text-uppercase grey--text">
+      <v-toolbar-title class="text-uppercase grey--text">
         <span class="font-weight-light">Wladi</span>
         <span>Mir </span>
-      </v-tool-tittle>
+      </v-toolbar-title>
       <VSpacer />
       <v-btn  color="success">
         <span>Sign Out</span>

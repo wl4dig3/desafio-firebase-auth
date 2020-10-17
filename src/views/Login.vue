@@ -9,8 +9,10 @@
           <v-text-field
             label="Username"
             prepend-icon="mdi-account-circle"
+            v-model="email"
           ></v-text-field>
           <v-text-field
+            v-model="password"
             :type="showPassword ? 'text' : 'password'"
             label="Password"
             prepend-icon="mdi-lock"
@@ -29,10 +31,17 @@
 </template>
 
 <script>
-export default {};
-data: () => ({
-  showPassword: false,
-});
+import {mapActions} from 'vuex'
+export default {
+  name: "Login",
+  data() {
+    return {
+      showPassword: false,
+      email: " ",
+      password: "",
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>

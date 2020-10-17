@@ -1,10 +1,13 @@
 <template>
   <div class="home">
-    <h1>This is the homepage</h1>
-    <v-btn flat color="grey">
-      <span>Log out</span>
-      <v-icon right>exit_to_app</v-icon>
-    </v-btn>
+    <h1 class="subheading grey--text">Crud proyect</h1>
+
+    <vContainer class="my-5">
+      <v-row>
+        <v-col></v-col>
+      </v-row>
+    </vContainer>
+    
   </div>
 </template>
 
