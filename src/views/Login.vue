@@ -22,7 +22,7 @@
         </v-form>
       </v-card-text>
       <v-card-actions>
-        <v-btn color="success">Register</v-btn>
+        <v-btn color="success" @click="crearUsuario({email:email, password: password})" >Register</v-btn>
         <v-spacer></v-spacer>
         <v-btn color="info">Login</v-btn>
       </v-card-actions>
@@ -41,6 +41,12 @@ export default {
       password: "",
     };
   },
+  created(){
+
+  },
+  methods:{
+    ...mapActions(['crearUsuario'])
+  }
 };
 </script>
 

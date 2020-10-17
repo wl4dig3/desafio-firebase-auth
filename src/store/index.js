@@ -19,7 +19,7 @@ export default new Vuex.Store({
   },
   actions: {
     crearUsuario({ commit }, usuario) {
-      firebase.auth.createUserWithEmailAndPassword(usuario.email, usuario.password)
+      auth.createUserWithEmailAndPassword(usuario.email, usuario.password)
         .then(resp => {
         console.log(resp)
         })
