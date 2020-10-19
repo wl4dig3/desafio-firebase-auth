@@ -26,19 +26,20 @@
         <v-spacer></v-spacer>
         <v-btn color="info">Login</v-btn>
       </v-card-actions>
+        <span>{{error.code}}</span>
     </v-card>
   </v-app>
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import {mapActions, mapState} from 'vuex'
 export default {
   name: "Login",
   data() {
     return {
       showPassword: false,
       email: " ",
-      password: "",
+      password: " ",
     };
   },
   created(){
@@ -46,6 +47,9 @@ export default {
   },
   methods:{
     ...mapActions(['crearUsuario'])
+  },
+  computed: {
+    ...mapState(['error'])
   }
 };
 </script>

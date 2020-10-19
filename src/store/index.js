@@ -2,12 +2,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {auth} from '../firebase'
+import router from '../router'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     usuario: 'null',
-    error:'error'
+    error:'null'
   },
   mutations: {
     setUsuario(state, payload) {
@@ -27,6 +28,7 @@ export default new Vuex.Store({
             uid: resp.user.uid
 }
           commit('setUsuario',usuarioCreado)
+          router.push('/')
         })
         .catch(error => {
           console.log(error)

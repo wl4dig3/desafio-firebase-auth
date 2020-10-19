@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1 class="subheading grey--text">Crud proyect</h1>
+    <h1 class="subheading grey--text">Ruta protegida</h1>
 
     <vContainer class="my-5">
       <v-row>
