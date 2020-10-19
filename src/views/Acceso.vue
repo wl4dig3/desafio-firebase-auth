@@ -1,8 +1,10 @@
 <template>
-  <v-app class="bg">
+    <!-- <div> -->
+    <v-app class="bg">
+        
     <v-card width="400" class="mx-auto mt-5">
       <v-card-title>
-        <h1>Login</h1>
+        <h1>Acceso de Usuario</h1>
       </v-card-title>
       <v-card-text>
         <v-form>
@@ -22,40 +24,38 @@
         </v-form>
       </v-card-text>
       <v-card-actions>
-        <v-btn color="success" @click="crearUsuario({email:email, password: password})" >Register</v-btn>
+        <v-btn color="success" @click="ingresoUsuario({email:email, password: password})" >Acceder</v-btn>
         <v-spacer></v-spacer>
-        <v-btn color="info">Login</v-btn>
+        <!-- <v-btn color="info">A</v-btn> -->
       </v-card-actions>
         <span>{{error.code}}</span>
     </v-card>
   </v-app>
+    <!-- </div> -->
 </template>
 
 <script>
 import {mapActions, mapState} from 'vuex'
 export default {
-  name: "Login",
-  data() {
-    return {
-      showPassword: false,
-      email: "",
-      password: "",
-    };
-  },
-  created(){
-
-  },
-  methods:{
-    ...mapActions(['crearUsuario'])
-  },
-  computed: {
-    ...mapState(['error'])
-  }
-};
+    name:'Acceso',
+    data() {
+        return {
+            showPassword: false,
+            email:'',
+            password:''
+        }
+    },
+    methods:{
+        ...mapActions(['ingresoUsuario'])
+    },
+    computed:{
+        ...mapState(['error'])
+    }
+}
 </script>
 
 <style lang="scss" scoped>
 .bg {
-  background: lightcyan;
+  background: grey;
 }
 </style>
