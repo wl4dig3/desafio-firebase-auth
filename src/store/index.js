@@ -50,8 +50,13 @@ export default new Vuex.Store({
         console.log(error)
         commit('setError',error)
       })
+    },
+    cerrarSesion({commit}){
+      auth.signOut()
+      .then(()=>{
+        router.push('/acceso')
+      })
     }
-  },
-  modules: {
   }
+  
 })

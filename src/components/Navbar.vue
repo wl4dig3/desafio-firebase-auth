@@ -7,7 +7,7 @@
         <span>Mir </span>
       </v-toolbar-title>
       <VSpacer />
-      <v-btn  color="success">
+      <v-btn @click="cerrarSesion" color="success">
         <span>Sign Out</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
   data() {
     return {
@@ -39,5 +40,8 @@ export default {
       ],
     };
   },
+  methods:{
+    ...mapActions(['cerrarSesion'])
+  }
 };
 </script>
