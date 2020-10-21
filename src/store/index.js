@@ -58,8 +58,18 @@ export default new Vuex.Store({
       })
     },
     detectarUsuario({commit}, usuario){
-      commit('sertUsuario',usuario)
+      commit('setUsuario',usuario)
     }
+  },
+  getters:{
+    existeUsuario(state){
+      if(state.usuario===null){
+        return false
+      }else{
+        return true
+      }
+    }
+
   }
   
 })

@@ -2,7 +2,7 @@
   <v-app class="grey lighten-4">
     <Navbar />
     <v-main class="mx-4 mb-4">
-      <!-- <router-link ></router-link> -->
+      
       <router-view></router-view>
     </v-main>
   </v-app>

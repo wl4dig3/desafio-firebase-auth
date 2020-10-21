@@ -8,12 +8,12 @@
       </v-toolbar-title>
       <VSpacer />
       <v-btn @click="cerrarSesion" color="success">
-        <span>Sign Out</span>
+        <span>Cerrar Sesion</span>
         <v-icon right>exit_to_app</v-icon>
       </v-btn>
     </v-toolbar>
     <v-navigation-drawer app v-model="drawer" class="indigo">
-      <v-list>
+      <v-list v-if="!existeUsuario">
         <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
           <v-list-item-action>
             <v-icon left class="white--text">{{ link.icon }}</v-icon>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 export default {
   data() {
     return {
@@ -42,6 +42,9 @@ export default {
   },
   methods:{
     ...mapActions(['cerrarSesion'])
+  },
+  computed:{
+    ...mapGetters(['existeUsuario'])
   }
 };
 </script>
