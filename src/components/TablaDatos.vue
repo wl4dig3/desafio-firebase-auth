@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in desserts" :key="item.name">
+        <tr v-for="item in Productos" :key="item.name">
           <td>{{ item.name }}</td>
           <td>{{ item.calories }}</td>
           <td>{{ item.stock }}</td>
@@ -19,49 +19,57 @@
       </tbody>
     </template>
   </v-simple-table>
-</template>ç<script>
+</template>
+
+<script>
+import {mapState} from 'vuex';
+
 export default {
+    name: 'TablaDatos',
   data() {
     return {
-      desserts: [
-        {
-          name: "Frozen Yogurt",
-          calories: 159,
-          stock: 10,
-          precio: 1200,
-        },
-        {
-          name: "Ice cream sandwich",
-          calories: 237,
-          stock: 10,
-          precio: 1200,
-        },
-        {
-          name: "Eclair",
-          calories: 262,
-          stock: 10,
-          precio: 1200,
-        },
-        {
-          name: "Cupcake",
-          calories: 305,
-          stock: 80,
-          precio: 12000,
-        },
-        {
-          name: "Gingerbread",
-          calories: 356,
-          stock: 40,
-          precio: 10200,
-        },
-        {
-          name: "Jelly bean",
-          calories: 375,
-          stock: 10,
-          precio: 1200,
-        },
-      ],
+    //   Productos: [
+    //     {
+    //       name: "Frozen Yogurt",
+    //       calories: 159,
+    //       stock: 10,
+    //       precio: 1200,
+    //     },
+    //     {
+    //       name: "Ice cream sandwich",
+    //       calories: 237,
+    //       stock: 10,
+    //       precio: 1200,
+    //     },
+    //     {
+    //       name: "Eclair",
+    //       calories: 262,
+    //       stock: 10,
+    //       precio: 1200,
+    //     },
+    //     {
+    //       name: "Cupcake",
+    //       calories: 305,
+    //       stock: 80,
+    //       precio: 12000,
+    //     },
+    //     {
+    //       name: "Gingerbread",
+    //       calories: 356,
+    //       stock: 40,
+    //       precio: 10200,
+    //     },
+    //     {
+    //       name: "Jelly bean",
+    //       calories: 375,
+    //       stock: 10,
+    //       precio: 1200,
+    //     },
+    //   ],
     };
   },
+  computed:{
+      ...mapState("Datos",["Productos"])
+  }
 };
 </script>
