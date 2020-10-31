@@ -35,7 +35,7 @@ export default {
       drawer: false,
       links: [
         // { icon: "dashboard", text: "Home", route: "/" },
-        { icon: "folder", text: "Login", route: "/login" },
+        { icon: "folder", text: "Registrarse", route: "/login" },
         { icon: "folder", text: "Acceso", route: "/acceso" }
       ],
     };

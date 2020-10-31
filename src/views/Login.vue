@@ -2,7 +2,7 @@
   <v-app class="bg">
     <v-card width="400" class="mx-auto mt-5">
       <v-card-title>
-        <h1>Login</h1>
+        <h1>Registrarse</h1>
       </v-card-title>
       <v-card-text>
         <v-form>
@@ -56,6 +56,8 @@ export default {
 
 <style lang="scss" scoped>
 .bg {
-  background: lightcyan;
+  background-image: url('../assets/klaus.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 </style>
