@@ -24,7 +24,7 @@
       <v-card-actions>
         <v-btn color="success" @click="crearUsuario({email:email, password: password})" >Register</v-btn>
         <v-spacer></v-spacer>
-        <v-btn color="info">Login</v-btn>
+        <!-- <v-btn color="info">Login</v-btn> -->
       </v-card-actions>
         <span>{{error.code}}</span>
     </v-card>
