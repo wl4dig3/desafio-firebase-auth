@@ -1,22 +1,22 @@
 <template>
   <div class="home">
-    <h1 class="subheading grey--text">Ruta protegida</h1>
     <!-- <p>{{usuario.email}}</p> -->
 
     <vContainer class="my-5">
+    <h1 class="subheading grey--text">Modo Administrador</h1>
+      <TablaDatos />
       <v-row>
         <v-col> </v-col>
       </v-row>
     </vContainer>
     <v-main>
-      <TablaDatos />
-      <v-router></v-router>
+      
     </v-main>
   </div>
 </template>
 
 <script>
-import TablaDatos from "@/components/TablaDatos";
+import TablaDatos from "./../components/TablaDatos";
 import { mapState } from "vuex";
 
 export default {

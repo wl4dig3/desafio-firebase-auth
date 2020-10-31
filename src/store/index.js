@@ -3,6 +3,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import {auth} from '../firebase'
 import router from '../router'
+
+import Datos from './datos'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
