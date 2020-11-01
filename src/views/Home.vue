@@ -5,6 +5,7 @@
     <vContainer class="my-5">
     <h1 class="subheading grey--text">Modo Administrador</h1>
       <TablaDatos />
+      <AgregarProductos />
       <v-row>
         <v-col> </v-col>
       </v-row>
@@ -17,6 +18,7 @@
 
 <script>
 import TablaDatos from "./../components/TablaDatos";
+import AgregarProductos from "./../components/AgregarProductos";
 import { mapState } from "vuex";
 
 export default {
@@ -24,6 +26,7 @@ export default {
 
   components: {
     TablaDatos,
+    AgregarProductos,
   },
 
   name: "Home",

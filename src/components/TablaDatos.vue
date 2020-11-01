@@ -3,7 +3,7 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left">Productos</th>
+          <th class="text-left">Nombre</th>
           <th class="text-left">Codigo</th>
           <th class="text-left">Stock</th>
           <th class="text-left">Precio</th>
@@ -11,8 +11,8 @@
       </thead>
       <tbody>
         <tr v-for="item in Productos" :key="item.name">
-          <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.codigo }}</td>
           <td>{{ item.stock }}</td>
           <td>{{ item.precio }}</td>
         </tr>
