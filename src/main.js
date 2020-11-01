@@ -10,7 +10,7 @@ import {auth} from './firebase'
 
 auth.onAuthStateChanged(user=>{
   if(user){
-    console.log('status usuario logueado',user.email)
+    // console.log('status usuario logueado',user.email)
     const detectoUsuario = {
       email: user.email,
       uid: user.uid
@@ -18,7 +18,7 @@ auth.onAuthStateChanged(user=>{
     store.dispatch('detectarUsuario', detectoUsuario)
 
   }else{
-    console.log(user)
+    // console.log(user)
     store.dispatch('detectarUsuario', user)
   }
 

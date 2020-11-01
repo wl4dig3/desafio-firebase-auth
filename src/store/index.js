@@ -24,7 +24,7 @@ export default new Vuex.Store({
     crearUsuario({ commit }, usuario) {
       auth.createUserWithEmailAndPassword(usuario.email, usuario.password)
         .then(resp => {
-          console.log(resp)
+          // console.log(resp)
           const usuarioCreado = {
             email: resp.user.email,
             uid: resp.user.uid
@@ -40,7 +40,7 @@ export default new Vuex.Store({
     ingresoUsuario({ commit }, usuario) {
       auth.signInWithEmailAndPassword(usuario.email, usuario.password)
         .then(resp => {
-          console.log(resp);
+          // console.log(resp);
           const usuarioLogueado = {
             email: resp.user.email,
             uid: resp.user.uid

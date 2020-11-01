@@ -45,7 +45,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     const usuario = auth.currentUser
-    console.log('usuario desde router', usuario)
+    // console.log('usuario con acceso de administrador', usuario)
     if (!usuario) {
       next({ path: '/login' })
     } else {

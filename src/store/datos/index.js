@@ -1,3 +1,5 @@
+import firebase from 'firebase'
+
 export default {
     namespaced: true,
     state: {
@@ -47,6 +49,12 @@ export default {
 
     },
     actions: {
-
+        async getData() {
+            const db = await firebase.firestore().collection("productos").get();
+            db.forEach(el=>{
+                // console.log(el.data());
+                
+            })
+        }
     }
 }
