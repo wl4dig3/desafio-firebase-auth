@@ -3,9 +3,9 @@ import firebase from 'firebase'
 export default {
     namespaced: true,
     state: {
-        Productos: [
+        Productos: [ ],
+        add:false
 
-        ]
     },
     getters: {
 
@@ -17,8 +17,12 @@ export default {
         },
         AddData(state, payload) {
             state.Productos.push(payload)
-            console.log(state.Productos);
+            // console.log(state.Productos);
+        },
+        MostrarAdd(state){
+            state.add = true
         }
+
 
     },
     actions: {
