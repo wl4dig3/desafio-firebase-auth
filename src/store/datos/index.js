@@ -3,12 +3,16 @@ import firebase from 'firebase'
 export default {
     namespaced: true,
     state: {
-        Productos: [ ],
-        add:false
+        Productos: [],
+        add: false,
+        edit: false,
+        editProducto: {}
 
     },
     getters: {
-
+        datos(state) {
+            return state.Productos
+        }
     },
     mutations: {
         setData(state, payload) {
@@ -19,8 +23,12 @@ export default {
             state.Productos.push(payload)
             // console.log(state.Productos);
         },
-        MostrarAdd(state){
-            state.add = true
+        MostrarAdd(state) {
+            state.add = !state.add
+        },
+        showEditProducto(state, payload) {
+            const finder = state.Productos.find((el) => el.id === payload)
+            state.editProducto = finder
         }
 
 
@@ -39,6 +47,10 @@ export default {
                 }
                 commit("setData", producto)
             })
+        },
+        borrarjuguete({ commit }, id){
+            firebase.firestore().collection('productos').doc(id).delete()
+
         },
         async addData({ commit }, payload) {
             const precio = Number(payload.precio)

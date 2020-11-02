@@ -10,7 +10,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in Productos" :key="item.name">
+        <tr v-for="item in Productos" :key="item.nombre" @click="editarJuguete(item.id)">
           <td>{{ item.nombre }}</td>
           <td>{{ item.codigo }}</td>
           <td>{{ item.stock }}</td>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import {mapGetters, mapState, mapMutations} from 'vuex';
 
 export default {
     name: 'TablaDatos',
@@ -69,7 +69,14 @@ export default {
     };
   },
   computed:{
-      ...mapState("Datos",["Productos"])
+      ...mapState("Datos",["Productos"]),
+      // ...mapGetters("Datos",["editarProductos"])
+  },
+  methods:{
+    ...mapMutations('Datos',['showEditProducto']),
+    editarJuguete(juguete){
+      this.showEditProducto(juguete);
+    }
   }
 };
 </script>

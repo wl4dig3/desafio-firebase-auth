@@ -1,15 +1,17 @@
 <template>
   <div class="home">
-    <!-- <p>{{usuario.email}}</p> -->
+    
 
     <vContainer class="my-5">
       <h1 class="subheading grey--text">Modo Administrador</h1>
       <TablaDatos />
       <v-btn color="blue-grey" class="ma-2 white--text" @click="showAdd">
-        Agregar producto
+        <span v-if="!add">Agregar producto</span>  <span v-if="add">Quitar formulario</span>
+        
         <v-icon right dark> mdi-cloud-upload </v-icon>
       </v-btn>
       <AgregarProductos v-if="add" />
+      <EditarProductos v-if="!edit"/>
       <v-row>
         <v-col> </v-col>
       </v-row>
@@ -21,6 +23,7 @@
 <script>
 import TablaDatos from "./../components/TablaDatos";
 import AgregarProductos from "./../components/AgregarProductos";
+import EditarProductos from "./../components/EditarProductos";
 import { mapMutations, mapState } from "vuex";
 
 export default {
@@ -29,14 +32,14 @@ export default {
   components: {
     TablaDatos,
     AgregarProductos,
+    EditarProductos,
   },
   
-
-  // name: "Home",
   computed: {
-    ...mapState("Datos", ["add"]),
+    ...mapState("Datos", ["add","edit"]),
     ...mapState(["usuario"]),
   },
+  
   methods: {
     ...mapMutations("Datos", ["MostrarAdd"]),
     showAdd() {
@@ -44,4 +47,6 @@ export default {
     },
   },
 };
+  
+
 </script>

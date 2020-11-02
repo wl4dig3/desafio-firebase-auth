@@ -20,6 +20,7 @@ export default {
   created() {
     // se inserta el siguiente codigo en la const para solucionar un error de trasnform-runtime
     const regeneratorRuntime = require("regenerator-runtime");
+    
     this.getData();
   },
   methods: {
