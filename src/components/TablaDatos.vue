@@ -7,14 +7,49 @@
           <th class="text-left">Codigo</th>
           <th class="text-left">Stock</th>
           <th class="text-left">Precio</th>
+          <th class="text-left">Editar</th>
+          <th class="text-left">Borrar</th>
+
+
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in Productos" :key="item.nombre" @click="editarJuguete(item.id)">
+        <tr v-for="item in Productos" :key="item.nombre" @click="editarrespaldo(item.id)">
           <td>{{ item.nombre }}</td>
           <td>{{ item.codigo }}</td>
           <td>{{ item.stock }}</td>
           <td>{{ item.precio }}</td>
+          <td>
+                <v-btn
+                  color="primary"
+                  small
+                  dark
+                  @click.stop="dialog = true"
+                  @click="
+                    editarrespaldo(
+                      Productos.id,
+                      Productos.codigo,
+                      Productos.nombre,
+                      Productos.stock,
+                      Productos.precio
+                    )
+                  "
+                >
+                  <v-icon dark> mdi-pencil </v-icon>
+                </v-btn>
+              </td>
+              <td>
+                <v-btn
+                  class="mx-2"
+                  fab
+                  dark
+                  small
+                  color="red"
+                  @click="borrar(Productos.id)"
+                >
+                  <v-icon dark> mdi-delete </v-icon>
+                </v-btn>
+              </td>
         </tr>
       </tbody>
     </template>
@@ -22,7 +57,7 @@
 </template>
 
 <script>
-import {mapGetters, mapState, mapMutations} from 'vuex';
+import {mapGetters, mapState, mapMutations, mapActions} from 'vuex';
 
 export default {
     name: 'TablaDatos',
@@ -73,9 +108,9 @@ export default {
       // ...mapGetters("Datos",["editarProductos"])
   },
   methods:{
-    ...mapMutations('Datos',['showEditProducto']),
-    editarJuguete(juguete){
-      this.showEditProducto(juguete);
+    ...mapMutations('Datos',['showEditarProducto']),
+    editarrespaldo(respaldo){
+      this.showEditarProducto(respaldo);
     }
   }
 };

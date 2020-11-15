@@ -5,18 +5,18 @@
         <h1>Agregar Productos</h1>
         <v-row>
           <v-col cols="12" md="4">
-            <v-text-field v-model="juguete.nombre" label="Nombre"></v-text-field>
+            <v-text-field v-model="respaldo.nombre" label="Nombre"></v-text-field>
           </v-col>
 
           <v-col cols="12" md="4">
-            <v-text-field v-model="juguete.codigo" label="Codigo"></v-text-field>
+            <v-text-field v-model="respaldo.codigo" label="Codigo"></v-text-field>
           </v-col>
 
           <v-col cols="12" md="4">
-            <v-text-field v-model="juguete.stock" label="Stock"></v-text-field>
+            <v-text-field v-model="respaldo.stock" label="Stock"></v-text-field>
           </v-col>
           <v-col cols="12" md="4">
-            <v-text-field v-model="juguete.precio" label="Precio"></v-text-field>
+            <v-text-field v-model="respaldo.precio" label="Precio"></v-text-field>
           </v-col>
           <v-col cols="12" md="4">
             <v-btn
@@ -40,7 +40,7 @@ export default {
   name: "AgregarProductos",
 
   data: () => ({
-    juguete: {
+    respaldo: {
       nombre: "",
       codigo: "",
       stock: "",
@@ -50,13 +50,13 @@ export default {
   methods: {
     ...mapActions("Datos", ["addData"]),
     AgregarProducto() {
-      this.addData(this.juguete);
+      this.addData(this.respaldo);
     },
     LimpiarData(){
-        this.juguete.nombre = "",
-        this.juguete.codigo = "",
-        this.juguete.precio = "",
-        this.juguete.stock = ""
+        this.respaldo.nombre = "",
+        this.respaldo.codigo = "",
+        this.respaldo.precio = "",
+        this.respaldo.stock = ""
     }
   },
 };

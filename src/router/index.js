@@ -32,8 +32,17 @@ const routes = [
     path: '/acceso',
     name: 'Acceso',
     component: () => import( '../views/Acceso.vue')
+  },
+  {
+    path: '/articulo/:id',
+    name: 'Articulo',
+    component: () => import( '../views/Articulo.vue')
+  },
+  {
+    path: '/articulo',
+    name: 'Articulo',
+    component: () => import( '../views/Articulo.vue')
   }
-
 ]
 
 const router = new VueRouter({
@@ -47,7 +56,7 @@ router.beforeEach((to, from, next) => {
     const usuario = auth.currentUser
     // console.log('usuario con acceso de administrador', usuario)
     if (!usuario) {
-      next({ path: '/login' })
+      // next({ path: '/login' })
     } else {
       next()
     }

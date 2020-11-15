@@ -56,6 +56,8 @@ export default {
 
 <style lang="scss" scoped>
 .bg {
-  background: grey;
+  background-image: url('../assets/access.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>

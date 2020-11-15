@@ -35,8 +35,9 @@ export default {
       drawer: false,
       links: [
         // { icon: "dashboard", text: "Home", route: "/" },
-        { icon: "folder", text: "Registrarse", route: "/login" },
-        { icon: "folder", text: "Acceso", route: "/acceso" }
+        { icon: "mdi-folder-account", text: "Registrarse", route: "/login" },
+        { icon: "mdi-card-account-details-star-outline", text: "Acceso", route: "/acceso" },
+        { icon: "mdi-tag-outline", text: "Articulos", route: "/articulo" },
       ],
     };
   },

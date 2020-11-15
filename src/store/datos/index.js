@@ -6,7 +6,7 @@ export default {
         Productos: [],
         add: false,
         edit: false,
-        editProducto: {}
+        editarProducto: {}
 
     },
     getters: {
@@ -26,9 +26,9 @@ export default {
         MostrarAdd(state) {
             state.add = !state.add
         },
-        showEditProducto(state, payload) {
+        showEditarProducto(state, payload) {
             const finder = state.Productos.find((el) => el.id === payload)
-            state.editProducto = finder
+            state.editarProducto = finder
         }
 
 
@@ -48,7 +48,7 @@ export default {
                 commit("setData", producto)
             })
         },
-        borrarjuguete({ commit }, id){
+        borrarrespaldo({ commit }, id){
             firebase.firestore().collection('productos').doc(id).delete()
 
         },
@@ -59,7 +59,7 @@ export default {
             const codigo = payload.codigo.toUpperCase();
             // console.log(payload);
 
-            const juguete = {
+            const respaldo = {
                 precio,
                 stock,
                 nombre,
@@ -67,15 +67,28 @@ export default {
             }
             // en firebase
             try {
-                await firebase.firestore().collection('productos').add(juguete)
+                await firebase.firestore().collection('productos').add(respaldo)
 
             } catch (error) {
-                console.log('Error en la carga de juguete:', error);
+                console.log('Error en la carga de respaldo:', error);
             }
+            // agregar al store
+      commit("AÑADIR_DATA", respaldo);
+    },
+    async editarProducto({ commit }, actualizacion) {
+      try {
+        await firebase
+          .firestore()
+          .collection("productos")
+          .doc(actualizacion.id)
+          .update(actualizacion.data);
+      } catch (error) {
+        console.log("hay un error en el edit de respaldos:", error);
+      }
 
 
             //en Store
-            commit("AddData", juguete)
+            commit("AddData", respaldo)
         }
     }
 }

@@ -56,8 +56,8 @@ export default {
 
 <style lang="scss" scoped>
 .bg {
-  background-image: url('../assets/klaus.jpg');
+  background-image: url('../assets/main-bg1.jpg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 </style>
